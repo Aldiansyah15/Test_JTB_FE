@@ -1,16 +1,66 @@
-# React + Vite
+# VacationGo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+VacationGo adalah aplikasi web interaktif untuk menampilkan daftar destinasi wisata dengan fitur login dan dashboard.
 
-Currently, two official plugins are available:
+**Frontend:**
+- React.js
+- Tailwind CSS / CSS Module
+- React Router
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Backend:**
+- Node.js
+- Express.js
+- MySQL / PostgreSQL
 
-## React Compiler
+**Lainnya:**
+- Axios (HTTP client)
+- JWT (Authentication)
+- Vite (Frontend bundler)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Untuk menjalankan project, clone repository terlebih dahulu:
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/username/nama-project.git
+cd nama-project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Jalankan backend:
+Copy code
+cd backend
+npm install
+npm run dev
+
+Backend default berjalan di http://localhost:5000. Buat file .env di folder backend:
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=nama_database
+JWT_SECRET=your_secret_key
+PORT=5000
+
+Setelah itu jalankan frontend:
+Copy code
+cd frontend
+npm install
+npm run dev
+
+Frontend default berjalan di http://localhost:5173.
+
+Struktur project backend:
+backend/
+├─ config/        # Konfigurasi database dan environment
+├─ utils/         # Helper functions
+├─ routes/        # Endpoint API
+├─ controllers/   # Logika bisnis per route
+├─ services/      # Service layer
+├─ middleware/    # Middleware (auth, error handling)
+├─ app.js         # Setup Express app
+└─ server.js      # Entry point server
+
+Struktur project frontend:
+frontend/
+├─ src/
+│  ├─ components/ # UI Components
+│  ├─ pages/      # Halaman seperti Login, Dashboard, Home
+│  ├─ context/    # Context API untuk state global
+│  └─ App.jsx     # Root component
+└─ package.json
