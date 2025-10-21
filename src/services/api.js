@@ -1,4 +1,5 @@
-const API_BASE_URL = "http://localhost:5000/api"; // sesuaikan dengan backend kamu
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+console.log("API_BASE_URL: ", API_BASE_URL)
 export async function apiRequest(endpoint, method = "GET", body = null, token = null) {
   const headers = { "Content-Type": "application/json" };
 
